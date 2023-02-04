@@ -1,0 +1,60 @@
+{
+	"pages": [
+		{
+			"path": "pages/index/index",
+			"style": {
+				"navigationBarTitleText": "樱花季"
+			}
+		}, 
+		{
+			"path": "pages/hotList/hotList",
+			"style": {
+				"navigationBarTitleText": "最火列表"
+			}
+		},
+		{
+			"path": "pages/post/post",
+			"style": {
+				"navigationBarTitleText": "攻略"
+			}
+		},
+		{
+			"path": "pages/personal/personal",
+			"style": {
+				"navigationBarTitleText": "我的樱花"
+			}
+		},
+		{
+            "path" : "pages/cityList/cityList",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+    ],
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "樱花季",
+		"navigationBarBackgroundColor": "#F8F8F8",
+		"backgroundColor": "#F8F8F8"
+	},
+	"uniIdRouter": {},
+	"tabBar": {
+		"custom": true,
+		"color": "black",
+		"borderStyle": "black",
+		"backgroundColor": "red",
+		"list": [
+			{
+				"pagePath": "pages/index/index",
+				"text": "樱花大道"
+			},
+			{
+				"pagePath":"pages/personal/personal",
+				"text": "我的"
+			}
+		]
+	}
+}

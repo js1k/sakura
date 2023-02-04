@@ -1,0 +1,33 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/hotList/hotList",
+    "pages/post/post",
+    "pages/personal/personal",
+    "pages/cityList/cityList"
+  ],
+  "subPackages": [],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "樱花季",
+    "navigationBarBackgroundColor": "#F8F8F8",
+    "backgroundColor": "#F8F8F8"
+  },
+  "tabBar": {
+    "custom": true,
+    "color": "black",
+    "borderStyle": "black",
+    "backgroundColor": "red",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "樱花大道"
+      },
+      {
+        "pagePath": "pages/personal/personal",
+        "text": "我的"
+      }
+    ]
+  },
+  "usingComponents": {}
+}
