@@ -4,14 +4,16 @@
 			<div class="head flx-ce-bet">
 				<div class="head-tit">最美樱花景点</div>
 				<div class="head-more" @click="goHotList">查看更多 
-					<img src="https://mp-786325b7-110e-46fb-a66c-1dab26346518.cdn.bspapp.com/cloudstorage/9e0921aa-453e-4785-8078-a8b5498c3e0d.png" alt="">
+					<img src="https://mp-786325b7-110e-46fb-a66c-1dab26346518.cdn.bspapp.com/cloudstorage/9e0921aa-453e-4785-8078-a8b5498c3e0d.png">
 				</div>
 			</div>
 			<div class="top-list flx-ce-bet">
 				<div class="top-itm" 
 					 v-for="(item, index) in hotList" 
-					 :key="item" @click="goPost(item.city)">
-					<img class="cover-img" :src="item.icon">
+					 :key="item" 
+					 @click="goPost(item.city)">
+					<img class="cover-img" 
+						 :src="item.icon">
 					<div class="model"></div>
 					<div class="top-bx flx-clm-ce">
 						<img src="https://mp-786325b7-110e-46fb-a66c-1dab26346518.cdn.bspapp.com/cloudstorage/6f0712f0-e355-44c9-8977-3c2c19c60c38.webp" class="top-itm-bg">
@@ -29,36 +31,23 @@
 			<div class="head flx-ce-bet">
 				<div class="head-tit">樱花物语</div>
 				<div class="head-more">查看全部
-					<img src="https://mp-786325b7-110e-46fb-a66c-1dab26346518.cdn.bspapp.com/cloudstorage/9e0921aa-453e-4785-8078-a8b5498c3e0d.png" alt="">
+					<img src="https://mp-786325b7-110e-46fb-a66c-1dab26346518.cdn.bspapp.com/cloudstorage/9e0921aa-453e-4785-8078-a8b5498c3e0d.png">
 				</div>
 			</div>
 			<div class="story-bx flx-ce-sta">
-				<div class="story-itm">
-					<img class="story-img" src="https://mp-786325b7-110e-46fb-a66c-1dab26346518.cdn.bspapp.com/cloudstorage/a4911b1a-3d4a-47b6-ba07-46cec0e7bc61.webp">
+				<div class="story-itm flx-ce-ce" 
+					 v-for="(item, index) in storyList" 
+					 :key="item" 
+					 @click="goStory(item.title)">
+						<img class="story-bg" 
+							 :src="item.cover.split('?')[0]+'/mini'">
+						<div class="rgb"></div>
+						<img class="story-img" 
+							 mode="widthFix"
+							 :src="item.cover">
 					<div class="story-itm-info">
-						<div class="story-name">樱花故事</div>
-						<div class="story-tit">我与春风皆过客</div>
-					</div>
-				</div>
-				<div class="story-itm">
-					<img class="story-img"  src="https://mp-786325b7-110e-46fb-a66c-1dab26346518.cdn.bspapp.com/cloudstorage/a4911b1a-3d4a-47b6-ba07-46cec0e7bc61.webp">
-					<div class="story-itm-info">
-						<div class="story-name">樱花故事</div>
-						<div class="story-tit">我与春风皆过客</div>
-					</div>
-				</div>
-				<div class="story-itm">
-					<img class="story-img"  src="https://mp-786325b7-110e-46fb-a66c-1dab26346518.cdn.bspapp.com/cloudstorage/a4911b1a-3d4a-47b6-ba07-46cec0e7bc61.webp">
-					<div class="story-itm-info">
-						<div class="story-name">樱花故事</div>
-						<div class="story-tit">我与春风皆过客</div>
-					</div>
-				</div>
-				<div class="story-itm">
-					<img class="story-img" src="https://mp-786325b7-110e-46fb-a66c-1dab26346518.cdn.bspapp.com/cloudstorage/a4911b1a-3d4a-47b6-ba07-46cec0e7bc61.webp">
-					<div class="story-itm-info">
-						<div class="story-name">樱花故事</div>
-						<div class="story-tit">我与春风皆过客</div>
+						<div class="story-name">{{item.title}}</div>
+						<!-- <div class="story-tit">我与春风皆过客</div> -->
 					</div>
 				</div>
 			</div>
@@ -182,7 +171,8 @@
 			return {
 				title: 'Hello',
 				db: wx.cloud.database(),
-				hotList: []
+				hotList: [],
+				storyList: []
 			}
 		},
 		onLoad() {
@@ -190,6 +180,7 @@
 		},
 		mounted(){
 			this.getHotList()
+			this.getStoryList()
 		},
 		methods: {
 			getHotList(){
@@ -198,9 +189,21 @@
 					.limit(3)
 					.get({
 						success: res => {
-							console.log('res', res.data)
 							this.hotList = res.data
-							console.log('hotList', this.hotList)
+						},
+						fail(err) {
+							console.log('error', err);
+						}
+					})
+			},
+			getStoryList(){
+				this.db.collection('story')
+					.orderBy("number", "asc")
+					.get({
+						success: res => {
+							console.log('res', res.data)
+							this.storyList = res.data
+							console.log('storyList', this.storyList)
 						},
 						fail(err) {
 							console.log('error', err);
@@ -216,6 +219,12 @@
 			goPost(city){
 				uni.navigateTo({
 					url: '/pages/post/post?city='+city,
+					animationType: 'pop-in'
+				})
+			},
+			goStory(title){
+				uni.navigateTo({
+					url: '/pages/story/story?title='+title,
 					animationType: 'pop-in'
 				})
 			}
@@ -339,22 +348,47 @@
 			margin-right: 12rpx;
 			position: relative;
 			.story-img {
-				width: 100%;
-				height:100%;
+				// width: 100%;
+				max-width: 100%;
+				max-height: 100%;
+				z-index: 1;
 			}
 		}
 	}
-	.story-itm-info{
+	.rgb{
+		width: 100%;
+		height: 100%;
+		background: rgba(0, 0, 0, 0.2);
 		position: absolute;
-		left: 30rpx;
-		bottom: 28rpx;
+		left: 0;
+		top: 0;
+		z-index: 0;
+	}
+	.story-bg{
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		z-index: -1;
+	}
+	.story-itm-info{
+		z-index: 1;
+		box-sizing: border-box;
+		width: 100%;
+		padding: 0 30rpx 28rpx;
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		background: linear-gradient(180deg, rgba(163,56,56,0) 0%, rgba(92,15,15,0.16) 34%, rgba(90,13,13,0.41) 100%);
+		opacity: 1;
 		.story-name{
 			font-size: 38rpx;
 			font-family: PingFang SC-Medium, PingFang SC;
 			font-weight: 500;
 			color: #FFFFFF;
-			line-height: 44rpx;
-			margin-bottom: 15rpx;
+			line-height: 1.5;
+			flex-wrap: wrap;
 		}
 		.story-tit{
 			font-size: 38rpx;

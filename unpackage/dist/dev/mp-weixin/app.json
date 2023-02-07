@@ -1,8 +1,8 @@
 {
   "pages": [
-    "pages/story/story",
     "pages/index/index",
     "pages/hotList/hotList",
+    "pages/story/story",
     "pages/post/post",
     "pages/personal/personal",
     "pages/cityList/cityList"

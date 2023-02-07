@@ -102,6 +102,22 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
+  var l0 = _vm.__map(_vm.storyList, function (item, index) {
+    var $orig = _vm.__get_orig(item)
+    var g0 = item.cover.split("?")
+    return {
+      $orig: $orig,
+      g0: g0,
+    }
+  })
+  _vm.$mp.data = Object.assign(
+    {},
+    {
+      $root: {
+        l0: l0,
+      },
+    }
+  )
 }
 var recyclableRender = false
 var staticRenderFns = []
@@ -308,37 +324,39 @@ exports.default = void 0;
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 var _default = {
   data: function data() {
     return {
       title: 'Hello',
       db: wx.cloud.database(),
-      hotList: []
+      hotList: [],
+      storyList: []
     };
   },
   onLoad: function onLoad() {},
   mounted: function mounted() {
     this.getHotList();
+    this.getStoryList();
   },
   methods: {
     getHotList: function getHotList() {
       var _this = this;
       this.db.collection('hot_list').orderBy("number", "asc").limit(3).get({
         success: function success(res) {
-          console.log('res', res.data);
           _this.hotList = res.data;
-          console.log('hotList', _this.hotList);
+        },
+        fail: function fail(err) {
+          console.log('error', err);
+        }
+      });
+    },
+    getStoryList: function getStoryList() {
+      var _this2 = this;
+      this.db.collection('story').orderBy("number", "asc").get({
+        success: function success(res) {
+          console.log('res', res.data);
+          _this2.storyList = res.data;
+          console.log('storyList', _this2.storyList);
         },
         fail: function fail(err) {
           console.log('error', err);
@@ -354,6 +372,12 @@ var _default = {
     goPost: function goPost(city) {
       uni.navigateTo({
         url: '/pages/post/post?city=' + city,
+        animationType: 'pop-in'
+      });
+    },
+    goStory: function goStory(title) {
+      uni.navigateTo({
+        url: '/pages/story/story?title=' + title,
         animationType: 'pop-in'
       });
     }

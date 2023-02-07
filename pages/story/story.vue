@@ -5,6 +5,7 @@
 		<div v-for="(item, index) in data.section" 
 			 :key="item" 
 			 class="">
+			 <div class="spe-head" v-if="item.speHead">{{item.speHead}}</div>
 			 <div class="img-box">
 				<img :src="item.image.split('?')[0]+'/mini'" 
 					 class="img-bg" v-if="item.image">
@@ -29,18 +30,18 @@
 		data() {
 			return {
 				db: wx.cloud.database(),
-				data: []
+				data: [],
+				title: ''
 			}
 		},
-		onLoad() {
-			
+		onLoad(option) {
+			this.title = option.title
 		},
 		mounted(){
 			this.getStory()
 		},
 		methods: {
 			copy(e){
-				console.log('复制',e)
 				uni.setClipboardData({
 					data: e
 				})
@@ -48,19 +49,12 @@
 			getStory(){
 				let _ = this.db.command
 				this.db.collection('story')
-					.where(_.or([
-						{
-							title: {
-								$regex:'.*' + '怎么',
-								$options: 'i'
-							}
-						}
-					]))
+					.where({
+						"title": this.title
+					})
 					.get({
 						success: res => {
-							console.log('res', res)
 							this.data = res.data[0]
-							console.log('data', this.data)
 						},
 						fail(err) {
 							console.log('error', err);
@@ -86,6 +80,12 @@
 		line-height: 1.8;
 		margin-bottom: 30rpx;
 		text-indent: 40rpx;
+	}
+	.spe-head{
+		font-size: 30rpx;
+		font-weight: bold;
+		color: blue;
+		margin-top: 20rpx;
 	}
 	.img-box{
 		width: 100%;

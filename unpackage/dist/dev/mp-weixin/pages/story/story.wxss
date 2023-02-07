@@ -39,6 +39,12 @@
   margin-bottom: 30rpx;
   text-indent: 40rpx;
 }
+.spe-head.data-v-70d145f2 {
+  font-size: 30rpx;
+  font-weight: bold;
+  color: blue;
+  margin-top: 20rpx;
+}
 .img-box.data-v-70d145f2 {
   width: 100%;
   min-height: 150rpx;

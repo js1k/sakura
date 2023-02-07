@@ -183,20 +183,23 @@ exports.default = void 0;
 //
 //
 //
+//
 var _default = {
   data: function data() {
     return {
       db: wx.cloud.database(),
-      data: []
+      data: [],
+      title: ''
     };
   },
-  onLoad: function onLoad() {},
+  onLoad: function onLoad(option) {
+    this.title = option.title;
+  },
   mounted: function mounted() {
     this.getStory();
   },
   methods: {
     copy: function copy(e) {
-      console.log('复制', e);
       uni.setClipboardData({
         data: e
       });
@@ -204,16 +207,11 @@ var _default = {
     getStory: function getStory() {
       var _this = this;
       var _ = this.db.command;
-      this.db.collection('story').where(_.or([{
-        title: {
-          $regex: '.*' + '怎么',
-          $options: 'i'
-        }
-      }])).get({
+      this.db.collection('story').where({
+        "title": this.title
+      }).get({
         success: function success(res) {
-          console.log('res', res);
           _this.data = res.data[0];
-          console.log('data', _this.data);
         },
         fail: function fail(err) {
           console.log('error', err);
