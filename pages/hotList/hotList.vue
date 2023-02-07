@@ -3,9 +3,9 @@
 		<div class="item" 
 			 v-for="(item, index) in list" 
 			 :key="index" 
-			 @click="goPost">
+			 @click="goPost(item.city)">
 			<div class="bg-box">
-				<!-- <img class="item-bg" :src="item.cover"> -->
+				<img class="item-bg" :src="item.cover.split('?')[0]+'/mini'">
 				<img class="item-img" :src="item.cover">
 			</div>
 			<div class="good-time">
@@ -13,7 +13,6 @@
 			</div>
 			<div class="flx-ce-bet com-info">
 				<div class="city">{{item.city}}</div>
-				<!-- <div class="recommend-loc">推荐地点：鼋头渚</div> -->
 			</div>
 		</div>
 	</div>
@@ -36,7 +35,6 @@
 		methods: {
 			getList(){
 				this.db.collection('hot_list')
-					.where({})
 					.orderBy('number', 'asc')
 					.get({
 						success: res => {
@@ -48,9 +46,9 @@
 						}
 					})
 			},
-			goPost(){
+			goPost(city){
 				uni.navigateTo({
-					url: '/pages/post/post',
+					url: '/pages/post/post?city='+city,
 					animationType: 'pop-in'
 				})
 			}
@@ -59,10 +57,6 @@
 </script>
 
 <style scoped lang="scss">
-	// image {
-	// 	width: auto;
-	// 	height: auto;
-	// }
 	.list-cot{
 		padding: 36rpx 24rpx 180rpx;
 	}
@@ -80,15 +74,14 @@
 			position: relative;
 		}
 		.item-bg{
-			width: 320%;
-			height: 320%;
+			width: 100%;
+			height: 100%;
 			position: absolute;
 			left: 0;
 			top: 0;
 			z-index: -1;
 			filter: blur(12rpx);
 			background: rgba(0, 0, 0, 0.3);
-			transform: translate3d(-30%, -30%, 0);
 		}
 		.item-img{
 			width: 100%;

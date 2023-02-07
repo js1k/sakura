@@ -24,62 +24,28 @@
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-.post-page.data-v-427e1906 {
-  padding: 40rpx 20rpx 40rpx;
+.story-page.data-v-70d145f2 {
+  padding: 0 20rpx 40rpx;
 }
-.title.data-v-427e1906 {
-  font-size: 36rpx;
+.title.data-v-70d145f2 {
+  font-size: 38rpx;
   font-weight: bold;
-  padding: 10rpx 0;
+  margin: 40rpx 0;
+  text-align: center;
 }
-.point.data-v-427e1906 {
-  font-size: 34rpx;
-  font-weight: bold;
-  color: blue;
-  margin: 25rpx;
-}
-.video.data-v-427e1906 {
-  margin: 30rpx 0 0;
-  width: 100%;
-}
-.from.data-v-427e1906 {
-  font-size: 20rpx;
-  margin-bottom: 30rpx;
-}
-.head.data-v-427e1906 {
-  font-size: 32rpx;
-  font-weight: bold;
-  margin: 30rpx 0;
-}
-.sec-head.data-v-427e1906 {
-  font-size: 28rpx;
-  font-weight: bold;
-  margin: 20rpx;
-}
-.text.data-v-427e1906 {
-  font-size: 28rpx;
+.introduce.data-v-70d145f2 {
+  font-size: 30rpx;
   line-height: 1.8;
-  margin-bottom: 20rpx;
+  margin-bottom: 30rpx;
   text-indent: 40rpx;
 }
-.price.data-v-427e1906, .open-time.data-v-427e1906, .best-time.data-v-427e1906, .park.data-v-427e1906 {
-  font-size: 28rpx;
-  line-height: 1.8;
-  margin-bottom: 20rpx;
-}
-.tips.data-v-427e1906 {
-  font-size: 28rpx;
-  color: red;
-  font-weight: bold;
-  line-height: 1.8;
-  margin-bottom: 20rpx;
-}
-.img-box.data-v-427e1906 {
+.img-box.data-v-70d145f2 {
   width: 100%;
   min-height: 150rpx;
   position: relative;
+  margin: 40rpx 0;
 }
-.mode-bg.data-v-427e1906 {
+.img-box .img-bg.data-v-70d145f2 {
   width: 100%;
   height: 150rpx;
   position: absolute;
@@ -87,7 +53,18 @@
   top: 0;
   z-index: -1;
 }
-.img.data-v-427e1906 {
+.img-box .img-cover.data-v-70d145f2 {
   width: 100%;
+}
+.ci-item.data-v-70d145f2 {
+  font-size: 30rpx;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-bottom: 30rpx;
+  line-height: 1.8;
+}
+.ci-from.data-v-70d145f2 {
+  font-size: 24rpx;
+  margin: 30rpx 0 60rpx;
+  color: #292727;
 }
 

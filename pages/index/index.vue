@@ -8,40 +8,19 @@
 				</div>
 			</div>
 			<div class="top-list flx-ce-bet">
-				<div class="top-itm">
-					<img class="cover-img" src="https://656e-env-0gzhad0z926095b7-1316700657.tcb.qcloud.la/jap/10001.png?sign=d371916c5b982909b2697538bd7805ae&t=1675265532">
+				<div class="top-itm" 
+					 v-for="(item, index) in hotList" 
+					 :key="item" @click="goPost(item.city)">
+					<img class="cover-img" :src="item.icon">
+					<div class="model"></div>
 					<div class="top-bx flx-clm-ce">
 						<img src="https://mp-786325b7-110e-46fb-a66c-1dab26346518.cdn.bspapp.com/cloudstorage/6f0712f0-e355-44c9-8977-3c2c19c60c38.webp" class="top-itm-bg">
 						<div class="top-fot">TOP</div>
-						<div class="top-num">1</div>
+						<div class="top-num">{{item.number}}</div>
 					</div>
 					<div class="top-info">
-						<div class="city-name">无锡市</div>
-						<div class="city-add">鼋头渚</div>
-					</div>
-				</div>
-				<div class="top-itm">
-					<img class="cover-img" src="https://656e-env-0gzhad0z926095b7-1316700657.tcb.qcloud.la/jap/10001.png?sign=d371916c5b982909b2697538bd7805ae&t=1675265532">
-					<div class="top-bx flx-clm-ce">
-						<img src="https://mp-786325b7-110e-46fb-a66c-1dab26346518.cdn.bspapp.com/cloudstorage/6f0712f0-e355-44c9-8977-3c2c19c60c38.webp" class="top-itm-bg">
-						<div class="top-fot">TOP</div>
-						<div class="top-num">1</div>
-					</div>
-					<div class="top-info">
-						<div class="city-name">无锡市</div>
-						<div class="city-add">鼋头渚</div>
-					</div>
-				</div>
-				<div class="top-itm">
-					<img class="cover-img" src="https://656e-env-0gzhad0z926095b7-1316700657.tcb.qcloud.la/jap/10001.png?sign=d371916c5b982909b2697538bd7805ae&t=1675265532">
-					<div class="top-bx flx-clm-ce">
-						<img src="https://mp-786325b7-110e-46fb-a66c-1dab26346518.cdn.bspapp.com/cloudstorage/6f0712f0-e355-44c9-8977-3c2c19c60c38.webp" class="top-itm-bg">
-						<div class="top-fot">TOP</div>
-						<div class="top-num">1</div>
-					</div>
-					<div class="top-info">
-						<div class="city-name">无锡市</div>
-						<div class="city-add">鼋头渚</div>
+						<div class="city-name">{{item.city}}</div>
+						<div class="city-add">{{item.recommend}}</div>
 					</div>
 				</div>
 			</div>
@@ -95,8 +74,11 @@
 				<div class="lf">
 					<div class="rec-itm">
 						<div class="filter-bx flx-ce-ce rec-lon">
-							<img class="filter-bg" src="https://mp-786325b7-110e-46fb-a66c-1dab26346518.cdn.bspapp.com/cloudstorage/a4911b1a-3d4a-47b6-ba07-46cec0e7bc61.webp">
-							<img class="rec-bg" src="https://mp-786325b7-110e-46fb-a66c-1dab26346518.cdn.bspapp.com/cloudstorage/a4911b1a-3d4a-47b6-ba07-46cec0e7bc61.webp">
+							<img class="filter-bg" 
+								 src="https://mp-786325b7-110e-46fb-a66c-1dab26346518.cdn.bspapp.com/cloudstorage/a4911b1a-3d4a-47b6-ba07-46cec0e7bc61.webp">
+							<img class="rec-bg" 
+								 mode="widthFix"
+								 src="https://mp-786325b7-110e-46fb-a66c-1dab26346518.cdn.bspapp.com/cloudstorage/a4911b1a-3d4a-47b6-ba07-46cec0e7bc61.webp">
 						</div>
 						<div class="rec-tit flx-ce-sta">
 							<span>武大樱花路</span>
@@ -116,8 +98,11 @@
 					</div>
 					<div class="rec-itm">
 						<div class="filter-bx flx-ce-ce rec-lon">	
-							<img class="filter-bg" src="https://mp-786325b7-110e-46fb-a66c-1dab26346518.cdn.bspapp.com/cloudstorage/a4911b1a-3d4a-47b6-ba07-46cec0e7bc61.webp">
-							<img class="rec-bg" src="https://mp-786325b7-110e-46fb-a66c-1dab26346518.cdn.bspapp.com/cloudstorage/a4911b1a-3d4a-47b6-ba07-46cec0e7bc61.webp">
+							<img class="filter-bg" 
+								 src="https://mp-786325b7-110e-46fb-a66c-1dab26346518.cdn.bspapp.com/cloudstorage/a4911b1a-3d4a-47b6-ba07-46cec0e7bc61.webp">
+							<img class="rec-bg" 
+								 mode="widthFix"
+								 src="https://mp-786325b7-110e-46fb-a66c-1dab26346518.cdn.bspapp.com/cloudstorage/a4911b1a-3d4a-47b6-ba07-46cec0e7bc61.webp">
 						</div>
 						<div class="rec-tit flx-ce-sta">
 							<span>武大樱花路</span>
@@ -139,8 +124,11 @@
 				<div class="ri">
 					<div class="rec-itm">
 						<div class="filter-bx flx-ce-ce rec-lon">
-							<img class="filter-bg" src="https://mp-786325b7-110e-46fb-a66c-1dab26346518.cdn.bspapp.com/cloudstorage/a4911b1a-3d4a-47b6-ba07-46cec0e7bc61.webp">
-							<img class="rec-bg" src="https://mp-786325b7-110e-46fb-a66c-1dab26346518.cdn.bspapp.com/cloudstorage/a4911b1a-3d4a-47b6-ba07-46cec0e7bc61.webp">
+							<img class="filter-bg" 
+								 src="https://mp-786325b7-110e-46fb-a66c-1dab26346518.cdn.bspapp.com/cloudstorage/a4911b1a-3d4a-47b6-ba07-46cec0e7bc61.webp">
+							<img class="rec-bg" 
+								 mode="widthFix"
+								 src="https://mp-786325b7-110e-46fb-a66c-1dab26346518.cdn.bspapp.com/cloudstorage/a4911b1a-3d4a-47b6-ba07-46cec0e7bc61.webp">
 						</div>
 						<div class="rec-tit flx-ce-sta">
 							<span>武大樱花路</span>
@@ -160,8 +148,11 @@
 					</div>
 					<div class="rec-itm">
 						<div class="filter-bx flx-ce-ce rec-lon">
-							<img class="filter-bg" src="https://mp-786325b7-110e-46fb-a66c-1dab26346518.cdn.bspapp.com/cloudstorage/a4911b1a-3d4a-47b6-ba07-46cec0e7bc61.webp">
-							<img class="rec-bg" src="https://mp-786325b7-110e-46fb-a66c-1dab26346518.cdn.bspapp.com/cloudstorage/a4911b1a-3d4a-47b6-ba07-46cec0e7bc61.webp">
+							<img class="filter-bg" 
+								 src="https://mp-786325b7-110e-46fb-a66c-1dab26346518.cdn.bspapp.com/cloudstorage/a4911b1a-3d4a-47b6-ba07-46cec0e7bc61.webp">
+							<img class="rec-bg" 
+								 mode="widthFix"
+								 src="https://mp-786325b7-110e-46fb-a66c-1dab26346518.cdn.bspapp.com/cloudstorage/a4911b1a-3d4a-47b6-ba07-46cec0e7bc61.webp">
 						</div>
 						<div class="rec-tit flx-ce-sta">
 							<span>武大樱花路</span>
@@ -189,16 +180,42 @@
 	export default {
 		data() {
 			return {
-				title: 'Hello'
+				title: 'Hello',
+				db: wx.cloud.database(),
+				hotList: []
 			}
 		},
 		onLoad() {
 
 		},
+		mounted(){
+			this.getHotList()
+		},
 		methods: {
+			getHotList(){
+				this.db.collection('hot_list')
+					.orderBy("number", "asc")
+					.limit(3)
+					.get({
+						success: res => {
+							console.log('res', res.data)
+							this.hotList = res.data
+							console.log('hotList', this.hotList)
+						},
+						fail(err) {
+							console.log('error', err);
+						}
+					})
+			},
 			goHotList(){
 				uni.navigateTo({
 					url: '/pages/hotList/hotList',
+					animationType: 'pop-in'
+				})
+			},
+			goPost(city){
+				uni.navigateTo({
+					url: '/pages/post/post?city='+city,
 					animationType: 'pop-in'
 				})
 			}
@@ -276,7 +293,7 @@
 		.top-info{
 			position: absolute;
 			left: 15rpx;
-			bottom: 4rpx;
+			bottom: 14rpx;
 		}
 	}
 	.top-itm:last-child{
@@ -414,5 +431,15 @@
 		color: rgba(0,0,0,0.85);
 		line-height: 33rpx;
 		margin:11rpx 0 20rpx;
+	}
+	.model{
+		width: 226rpx;
+		height: 125rpx;
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		z-index: -1;
+		background: linear-gradient(180deg, rgba(163,56,56,0) 0%, rgba(92,15,15,0.37) 34%, rgba(44,17,17,0.56) 100%);
+		border-radius: 0px 0px 12rpx 12rpx;
 	}
 </style>

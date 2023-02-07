@@ -94,7 +94,7 @@
 .top-itm .top-info.data-v-57280228 {
   position: absolute;
   left: 15rpx;
-  bottom: 4rpx;
+  bottom: 14rpx;
 }
 .top-itm.data-v-57280228:last-child {
   margin-right: 0;
@@ -233,5 +233,15 @@ image.data-v-57280228 {
   color: rgba(0, 0, 0, 0.85);
   line-height: 33rpx;
   margin: 11rpx 0 20rpx;
+}
+.model.data-v-57280228 {
+  width: 226rpx;
+  height: 125rpx;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: -1;
+  background: linear-gradient(180deg, rgba(163, 56, 56, 0) 0%, rgba(92, 15, 15, 0.37) 34%, rgba(44, 17, 17, 0.56) 100%);
+  border-radius: 0px 0px 12rpx 12rpx;
 }
 
