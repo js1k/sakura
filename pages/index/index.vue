@@ -30,9 +30,6 @@
 		<div class="scetion">
 			<div class="head flx-ce-bet">
 				<div class="head-tit">樱花物语</div>
-				<div class="head-more">查看全部
-					<img src="https://mp-786325b7-110e-46fb-a66c-1dab26346518.cdn.bspapp.com/cloudstorage/9e0921aa-453e-4785-8078-a8b5498c3e0d.png">
-				</div>
 			</div>
 			<div class="story-bx flx-ce-sta">
 				<div class="story-itm flx-ce-ce" 
@@ -43,7 +40,6 @@
 							 :src="item.cover.split('?')[0]+'/mini'">
 						<div class="rgb"></div>
 						<img class="story-img" 
-							 mode="widthFix"
 							 :src="item.cover">
 					<div class="story-itm-info">
 						<div class="story-name">{{item.title}}</div>
@@ -55,108 +51,57 @@
 		<div class="good-recommend">
 			<div class="head flx-ce-bet">
 				<div class="head-tit">精选攻略</div>
-				<div class="head-more">查看全部 
-					<img src="https://mp-786325b7-110e-46fb-a66c-1dab26346518.cdn.bspapp.com/cloudstorage/9e0921aa-453e-4785-8078-a8b5498c3e0d.png" alt="">
-				</div>
 			</div>
-			<div class="recommend-list flx-ce-bet">
+			<div class="recommend-list flx-sta-bet">
 				<div class="lf">
-					<div class="rec-itm">
-						<div class="filter-bx flx-ce-ce rec-lon">
+					<div class="rec-itm" @click="goPost('武汉')">
+						<div class="filter-bx flx-ce-ce">
 							<img class="filter-bg" 
-								 src="https://mp-786325b7-110e-46fb-a66c-1dab26346518.cdn.bspapp.com/cloudstorage/a4911b1a-3d4a-47b6-ba07-46cec0e7bc61.webp">
+								 src="https://656e-env-0gzhad0z926095b7-1316700657.tcb.qcloud.la/index/wuhan-ico.webp?sign=267950c79dc748642903fe4d76320680&t=1675607380/mini">
 							<img class="rec-bg" 
 								 mode="widthFix"
-								 src="https://mp-786325b7-110e-46fb-a66c-1dab26346518.cdn.bspapp.com/cloudstorage/a4911b1a-3d4a-47b6-ba07-46cec0e7bc61.webp">
+								 src="https://656e-env-0gzhad0z926095b7-1316700657.tcb.qcloud.la/index/wuhan-ico.webp?sign=267950c79dc748642903fe4d76320680&t=1675607380/mini">
 						</div>
 						<div class="rec-tit flx-ce-sta">
 							<span>武大樱花路</span>
-							<label> | </label>
-							<span>最美樱花</span>
-						</div>
-						<div class="flx-ce-sta">
-							<div class="flx-ce-sta like-bx">
-								<img class="rec-like" src="https://mp-786325b7-110e-46fb-a66c-1dab26346518.cdn.bspapp.com/cloudstorage/a2ea9b06-2177-4f35-b1b4-40193d363c2d.webp" alt="">
-								<span class="rec-num">1</span>
-							</div>
-							<div class="flx-ce-sta">
-								<img class="rec-like" src="https://mp-786325b7-110e-46fb-a66c-1dab26346518.cdn.bspapp.com/cloudstorage/fee01900-9d41-4af3-a02c-7a3e3e48a7c3.webp" alt="">
-								<span class="rec-num">0</span>
-							</div>
 						</div>
 					</div>
-					<div class="rec-itm">
-						<div class="filter-bx flx-ce-ce rec-lon">	
+					<div class="rec-itm" @click="goStory('樱花传说')">
+						<div class="filter-bx flx-ce-ce">	
 							<img class="filter-bg" 
-								 src="https://mp-786325b7-110e-46fb-a66c-1dab26346518.cdn.bspapp.com/cloudstorage/a4911b1a-3d4a-47b6-ba07-46cec0e7bc61.webp">
+								 src="https://656e-env-0gzhad0z926095b7-1316700657.tcb.qcloud.la/yinghuawuyu/cover/4.png/mini">
 							<img class="rec-bg" 
 								 mode="widthFix"
-								 src="https://mp-786325b7-110e-46fb-a66c-1dab26346518.cdn.bspapp.com/cloudstorage/a4911b1a-3d4a-47b6-ba07-46cec0e7bc61.webp">
+								 src="https://656e-env-0gzhad0z926095b7-1316700657.tcb.qcloud.la/yinghuawuyu/cover/4.png/mini">
 						</div>
 						<div class="rec-tit flx-ce-sta">
-							<span>武大樱花路</span>
-							<label> | </label>
-							<span>最美樱花</span>
-						</div>
-						<div class="flx-ce-sta">
-							<div class="flx-ce-sta like-bx">
-								<img class="rec-like" src="https://mp-786325b7-110e-46fb-a66c-1dab26346518.cdn.bspapp.com/cloudstorage/a2ea9b06-2177-4f35-b1b4-40193d363c2d.webp" alt="">
-								<span class="rec-num">1</span>
-							</div>
-							<div class="flx-ce-sta">
-								<img class="rec-like" src="https://mp-786325b7-110e-46fb-a66c-1dab26346518.cdn.bspapp.com/cloudstorage/fee01900-9d41-4af3-a02c-7a3e3e48a7c3.webp" alt="">
-								<span class="rec-num">0</span>
-							</div>
+							<span>樱花传说</span>
 						</div>
 					</div>
 				</div>
 				<div class="ri">
-					<div class="rec-itm">
-						<div class="filter-bx flx-ce-ce rec-lon">
+					<div class="rec-itm" @click="goPost('北京')">
+						<div class="filter-bx flx-ce-ce">
 							<img class="filter-bg" 
-								 src="https://mp-786325b7-110e-46fb-a66c-1dab26346518.cdn.bspapp.com/cloudstorage/a4911b1a-3d4a-47b6-ba07-46cec0e7bc61.webp">
+								 src="https://656e-env-0gzhad0z926095b7-1316700657.tcb.qcloud.la/jap/beijing.png?sign=010608df887d032e6e82b30da30c965d&t=1675510442/mini">
 							<img class="rec-bg" 
 								 mode="widthFix"
-								 src="https://mp-786325b7-110e-46fb-a66c-1dab26346518.cdn.bspapp.com/cloudstorage/a4911b1a-3d4a-47b6-ba07-46cec0e7bc61.webp">
+								 src="https://656e-env-0gzhad0z926095b7-1316700657.tcb.qcloud.la/jap/beijing.png?sign=010608df887d032e6e82b30da30c965d&t=1675510442/mini">
 						</div>
 						<div class="rec-tit flx-ce-sta">
-							<span>武大樱花路</span>
-							<label> | </label>
-							<span>最美樱花</span>
-						</div>
-						<div class="flx-ce-sta">
-							<div class="flx-ce-sta like-bx">
-								<img class="rec-like" src="https://mp-786325b7-110e-46fb-a66c-1dab26346518.cdn.bspapp.com/cloudstorage/a2ea9b06-2177-4f35-b1b4-40193d363c2d.webp" alt="">
-								<span class="rec-num">1</span>
-							</div>
-							<div class="flx-ce-sta">
-								<img class="rec-like" src="https://mp-786325b7-110e-46fb-a66c-1dab26346518.cdn.bspapp.com/cloudstorage/fee01900-9d41-4af3-a02c-7a3e3e48a7c3.webp" alt="">
-								<span class="rec-num">0</span>
-							</div>
+							<span>玉渊潭樱花雨</span>
 						</div>
 					</div>
-					<div class="rec-itm">
-						<div class="filter-bx flx-ce-ce rec-lon">
+					<div class="rec-itm" @click="goPost('上海')">
+						<div class="filter-bx flx-ce-ce">
 							<img class="filter-bg" 
-								 src="https://mp-786325b7-110e-46fb-a66c-1dab26346518.cdn.bspapp.com/cloudstorage/a4911b1a-3d4a-47b6-ba07-46cec0e7bc61.webp">
+								 src="https://656e-env-0gzhad0z926095b7-1316700657.tcb.qcloud.la/index/shanghai-ico.png?sign=0e4a7f3eba9c5bb2f39b7910046b005c&t=1675607362/mini">
 							<img class="rec-bg" 
 								 mode="widthFix"
-								 src="https://mp-786325b7-110e-46fb-a66c-1dab26346518.cdn.bspapp.com/cloudstorage/a4911b1a-3d4a-47b6-ba07-46cec0e7bc61.webp">
+								 src="https://656e-env-0gzhad0z926095b7-1316700657.tcb.qcloud.la/index/shanghai-ico.png?sign=0e4a7f3eba9c5bb2f39b7910046b005c&t=1675607362/mini">
 						</div>
 						<div class="rec-tit flx-ce-sta">
-							<span>武大樱花路</span>
-							<label> | </label>
-							<span>最美樱花</span>
-						</div>
-						<div class="flx-ce-sta">
-							<div class="flx-ce-sta like-bx">
-								<img class="rec-like" src="https://mp-786325b7-110e-46fb-a66c-1dab26346518.cdn.bspapp.com/cloudstorage/a2ea9b06-2177-4f35-b1b4-40193d363c2d.webp" alt="">
-								<span class="rec-num">1</span>
-							</div>
-							<div class="flx-ce-sta">
-								<img class="rec-like" src="https://mp-786325b7-110e-46fb-a66c-1dab26346518.cdn.bspapp.com/cloudstorage/fee01900-9d41-4af3-a02c-7a3e3e48a7c3.webp" alt="">
-								<span class="rec-num">0</span>
-							</div>
+							<span>辰山植物园</span>
 						</div>
 					</div>
 				</div>
@@ -201,9 +146,7 @@
 					.orderBy("number", "asc")
 					.get({
 						success: res => {
-							console.log('res', res.data)
 							this.storyList = res.data
-							console.log('storyList', this.storyList)
 						},
 						fail(err) {
 							console.log('error', err);
@@ -228,6 +171,18 @@
 					animationType: 'pop-in'
 				})
 			}
+		},
+		onShareAppMessage() {
+			return {
+			  path: `/pages/index/index`,
+			  imageUrl: 'https://656e-env-0gzhad0z926095b7-1316700657.tcb.qcloud.la/yinghuawuyu/cover/share.png?sign=57b48273910c205258317fd62e439209&t=1675872382',
+			};
+		},
+		onShareTimeline() {
+			return {
+			  title: '相约樱花季',
+			  imageUrl: 'https://656e-env-0gzhad0z926095b7-1316700657.tcb.qcloud.la/yinghuawuyu/cover/share.png?sign=57b48273910c205258317fd62e439209&t=1675872382',
+			};
 		}
 	}
 </script>
@@ -241,7 +196,7 @@
 		padding: 0 24rpx;
 		overflow-x: hidden;
 		overflow-y: auto;
-		padding-bottom: 180rpx;
+		padding-bottom: 50rpx;
 	}
 	.head{
 		padding: 44rpx 0 28rpx;
@@ -314,6 +269,7 @@
 		font-weight: 500;
 		color: #FFFFFF;
 		line-height: 38rpx;
+		margin-bottom:8rpx;
 	}
 	.city-add{
 		font-size: 18rpx;
@@ -340,20 +296,23 @@
 		width: 100%;
 		overflow-x: scroll;
 		.story-itm{
-			width: 676rpx;
-			min-width: 676rpx;
-			height: 327rpx;
+			width: 702rpx;
+			min-width: 702rpx;
+			height: 300rpx;
 			border-radius: 12rpx;
 			overflow: hidden;
 			margin-right: 12rpx;
 			position: relative;
 			.story-img {
 				// width: 100%;
-				max-width: 100%;
-				max-height: 100%;
+				width: 100%;
+				height: 100%;
 				z-index: 1;
 			}
 		}
+	}
+	.good-recommend{
+		width: 100%;
 	}
 	.rgb{
 		width: 100%;
@@ -383,7 +342,7 @@
 		background: linear-gradient(180deg, rgba(163,56,56,0) 0%, rgba(92,15,15,0.16) 34%, rgba(90,13,13,0.41) 100%);
 		opacity: 1;
 		.story-name{
-			font-size: 38rpx;
+			font-size: 34rpx;
 			font-family: PingFang SC-Medium, PingFang SC;
 			font-weight: 500;
 			color: #FFFFFF;
@@ -406,13 +365,13 @@
 		}
 		.filter-bx{
 			width: 345rpx;
-			height: 457rpx;
 			position: relative;
 			overflow: hidden;
+			border-radius: 12rpx;
 		}
 		.filter-bg{
 			width: 320%;
-			height: 320%;
+			height: 100rpx;
 			position: absolute;
 			left: 0;
 			top: 0;
@@ -423,13 +382,8 @@
 		}
 		.rec-bg{
 			width: 100%;
-			max-width: 100%;
-			max-height: 100%;
 			object-fit: contain;
 			z-index: 1;
-		}
-		.rec-lon{
-			height: 457rpx;
 		}
 	}
 	image{

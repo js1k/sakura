@@ -32,7 +32,7 @@
   padding: 0 24rpx;
   overflow-x: hidden;
   overflow-y: auto;
-  padding-bottom: 180rpx;
+  padding-bottom: 50rpx;
 }
 .head.data-v-57280228 {
   padding: 44rpx 0 28rpx;
@@ -105,6 +105,7 @@
   font-weight: 500;
   color: #FFFFFF;
   line-height: 38rpx;
+  margin-bottom: 8rpx;
 }
 .city-add.data-v-57280228 {
   font-size: 18rpx;
@@ -132,18 +133,21 @@
   overflow-x: scroll;
 }
 .story-bx .story-itm.data-v-57280228 {
-  width: 676rpx;
-  min-width: 676rpx;
-  height: 327rpx;
+  width: 702rpx;
+  min-width: 702rpx;
+  height: 300rpx;
   border-radius: 12rpx;
   overflow: hidden;
   margin-right: 12rpx;
   position: relative;
 }
 .story-bx .story-itm .story-img.data-v-57280228 {
-  max-width: 100%;
-  max-height: 100%;
+  width: 100%;
+  height: 100%;
   z-index: 1;
+}
+.good-recommend.data-v-57280228 {
+  width: 100%;
 }
 .rgb.data-v-57280228 {
   width: 100%;
@@ -174,7 +178,7 @@
   opacity: 1;
 }
 .story-itm-info .story-name.data-v-57280228 {
-  font-size: 38rpx;
+  font-size: 34rpx;
   font-family: PingFang SC-Medium, PingFang SC;
   font-weight: 500;
   color: #FFFFFF;
@@ -197,13 +201,13 @@
 }
 .lf .filter-bx.data-v-57280228, .ri .filter-bx.data-v-57280228 {
   width: 345rpx;
-  height: 457rpx;
   position: relative;
   overflow: hidden;
+  border-radius: 12rpx;
 }
 .lf .filter-bg.data-v-57280228, .ri .filter-bg.data-v-57280228 {
   width: 320%;
-  height: 320%;
+  height: 100rpx;
   position: absolute;
   left: 0;
   top: 0;
@@ -216,13 +220,8 @@
 }
 .lf .rec-bg.data-v-57280228, .ri .rec-bg.data-v-57280228 {
   width: 100%;
-  max-width: 100%;
-  max-height: 100%;
   object-fit: contain;
   z-index: 1;
-}
-.lf .rec-lon.data-v-57280228, .ri .rec-lon.data-v-57280228 {
-  height: 457rpx;
 }
 image.data-v-57280228 {
   list-style: none;

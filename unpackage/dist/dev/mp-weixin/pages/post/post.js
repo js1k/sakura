@@ -224,6 +224,18 @@ var _default = {
         }
       });
     }
+  },
+  onShareAppMessage: function onShareAppMessage() {
+    return {
+      path: "/pages/post/post?city=".concat(this.city),
+      imageUrl: 'https://656e-env-0gzhad0z926095b7-1316700657.tcb.qcloud.la/yinghuawuyu/cover/share.png?sign=57b48273910c205258317fd62e439209&t=1675872382'
+    };
+  },
+  onShareTimeline: function onShareTimeline() {
+    return {
+      title: this.post.title,
+      imageUrl: 'https://656e-env-0gzhad0z926095b7-1316700657.tcb.qcloud.la/yinghuawuyu/cover/share.png?sign=57b48273910c205258317fd62e439209&t=1675872382'
+    };
   }
 };
 exports.default = _default;

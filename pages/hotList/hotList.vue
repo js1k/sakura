@@ -8,9 +8,7 @@
 				<img class="item-bg" :src="item.cover.split('?')[0]+'/mini'">
 				<img class="item-img" :src="item.cover">
 			</div>
-			<div class="good-time">
-				最佳赏樱时间： 3.15 ~ 4.15
-			</div>
+			<!-- <div class="good-time">最佳赏樱时间： 3.15 ~ 4.15</div> -->
 			<div class="flx-ce-bet com-info">
 				<div class="city">{{item.city}}</div>
 			</div>
@@ -34,7 +32,11 @@
 		},
 		methods: {
 			getList(){
+				const _ = this.db.command
 				this.db.collection('hot_list')
+					.where({
+						city: _.neq('苏州').and(_.neq('杭州')).and(_.neq('昆明')).and(_.neq('扬州')).and(_.neq('美国')).and(_.neq('青岛'))
+					})
 					.orderBy('number', 'asc')
 					.get({
 						success: res => {
@@ -52,6 +54,18 @@
 					animationType: 'pop-in'
 				})
 			}
+		},
+		onShareAppMessage() {
+			return {
+			  path: `/pages/index/index`,
+			  imageUrl: 'https://656e-env-0gzhad0z926095b7-1316700657.tcb.qcloud.la/yinghuawuyu/cover/share.png?sign=57b48273910c205258317fd62e439209&t=1675872382',
+			};
+		},
+		onShareTimeline() {
+			return {
+			  title: '相约樱花季',
+			  imageUrl: 'https://656e-env-0gzhad0z926095b7-1316700657.tcb.qcloud.la/yinghuawuyu/cover/share.png?sign=57b48273910c205258317fd62e439209&t=1675872382',
+			};
 		}
 	}
 </script>
